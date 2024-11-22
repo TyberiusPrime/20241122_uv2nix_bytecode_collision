@@ -1,0 +1,35 @@
+warning: Git tree '/project/builds/hammer_build_local-attention_1.9.15/build' is dirty
+trace: torch matched to 2.5.1
+trace: networkx matched to 2.2
+trace: nvidia-cublas-cu12 matched to 12.4.5.8
+trace: nvidia-cuda-cupti-cu12 matched to 12.4.127
+trace: nvidia-cuda-nvrtc-cu12 matched to 12.1.105
+trace: nvidia-cuda-runtime-cu12 matched to 12.1.105
+trace: nvidia-cudnn-cu12 matched to 9.1.0.70
+trace: nvidia-cufft-cu12 matched to 11.0.2.54
+trace: nvidia-curand-cu12 matched to 10.3.2.106
+trace: nvidia-cusolver-cu12 matched to 11.4.5.107
+trace: nvidia-cusparse-cu12 matched to 12.1.0.106
+trace: nvidia-nccl-cu12 matched to 2.20.5
+trace: no version match for nvidia-nvjitlink-cu12
+trace: nvidia-nvtx-cu12 matched to 12.1.105
+trace: markupsafe matched to 2.0.1
+trace: x86_64-linux
+these 2 derivations will be built:
+  /nix/store/8k2n804q0r4qdy5zdkfblmz87s3aajp7-uv2nix-hammer-app-0.1.0.drv
+  /nix/store/3lyplsg3acs8hlzp59ms9w1svp100xrk-test-venv.drv
+building '/nix/store/8k2n804q0r4qdy5zdkfblmz87s3aajp7-uv2nix-hammer-app-0.1.0.drv'...
+building '/nix/store/3lyplsg3acs8hlzp59ms9w1svp100xrk-test-venv.drv'...
+error: builder for '/nix/store/3lyplsg3acs8hlzp59ms9w1svp100xrk-test-venv.drv' failed with exit code 1;
+       last 10 log lines:
+       >      Target: /nix/store/cr5q4x0k6vm0s10v701j3plmxnks1271-test-venv/lib/python3.12/site-packages/nvidia/__pycache__/__init__.cpython-312.pyc
+       >      File 1: /nix/store/hdkldwgr45yvsxrdq6lii5cb6d49f3gg-nvidia-cuda-runtime-cu12-12.4.127/lib/python3.12/site-packages/nvidia/__pycache__/__init__.cpython-312.pyc
+       >      File 2: /nix/store/14s9k7rl7m9zdfp5cayk8abapqg0z3mc-nvidia-cuda-nvrtc-cu12-12.4.127/lib/python3.12/site-packages/nvidia/__pycache__/__init__.cpython-312.pyc.
+       > Consider adding an overide to delete it in one (or both) packages. Template:
+       > pkg = prev.pkg.overrideAttrs (old: {
+       >           postInstall = ''
+       >               rm $out/lib/python${final.python.pythonVersion}/site-packages/docs/source/conf.py
+       > '';
+       > });
+       >
+       For full logs, run 'nix log /nix/store/3lyplsg3acs8hlzp59ms9w1svp100xrk-test-venv.drv'.
